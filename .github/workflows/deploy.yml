@@ -41,7 +41,7 @@ jobs:
       run: |
         echo "$SSH_PRIVATE_KEY" > key.pem
         chmod 600 key.pem
-        scp -o StrictHostKeyChecking=no -i key.pem web/index.html debian@<IP_EXTERNA_VM>:/tmp/index.html
-        ssh -o StrictHostKeyChecking=no -i key.pem debian@<IP_EXTERNA_VM> "sudo mv /tmp/index.html /var/www/html/index.html"
+        scp -o StrictHostKeyChecking=no -i key.pem web/index.html debian@34.66.223.58:/tmp/index.html
+        ssh -o StrictHostKeyChecking=no -i key.pem debian@34.66.223.58 "sudo mv /tmp/index.html /var/www/html/index.html"
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
